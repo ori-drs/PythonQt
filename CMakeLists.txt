@@ -7,7 +7,14 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-project(PythonQt)
+project(python_qt)
+
+find_package(catkin)
+
+catkin_package(
+INCLUDE_DIRS src/ generated_cpp_50/
+LIBRARIES ${PROJECT_NAME}
+)
 
 #----------------------------------------------------------------------------
 # Qt version
@@ -303,17 +310,17 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/src
   )
 
-add_library(PythonQt SHARED
+add_library(${PROJECT_NAME} SHARED
             ${sources}
             ${gen_moc_sources}
   )
-set_target_properties(PythonQt PROPERTIES DEFINE_SYMBOL PYTHONQT_EXPORTS)
+set_target_properties(${PROJECT_NAME} PROPERTIES DEFINE_SYMBOL PYTHONQT_EXPORTS)
 
-target_compile_options(PythonQt PRIVATE
+target_compile_options(${PROJECT_NAME} PRIVATE
   $<$<CXX_COMPILER_ID:MSVC>:/bigobj>
   )
 
-target_link_libraries(PythonQt
+target_link_libraries(${PROJECT_NAME}
               ${PYTHON_LIBRARY}
               ${QT_LIBRARIES}
   )
@@ -321,7 +328,7 @@ target_link_libraries(PythonQt
 #-----------------------------------------------------------------------------
 # Install library (on windows, put the dll in 'bin' and the archive in 'lib')
 
-install(TARGETS PythonQt
+install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION ${PythonQt_INSTALL_RUNTIME_DIR}
         LIBRARY DESTINATION ${PythonQt_INSTALL_LIBRARY_DIR}
         ARCHIVE DESTINATION ${PythonQt_INSTALL_ARCHIVE_DIR})

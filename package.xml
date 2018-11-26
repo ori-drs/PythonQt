@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>python_qt</name>
+    <version>1.0.0</version>
+    <description>python_qt</description>
+    <maintainer email="name@email.com">name</maintainer>
+    <license>BSD</license>
+    <buildtool_depend>catkin</buildtool_depend>
+</package>
