@@ -16,6 +16,11 @@ INCLUDE_DIRS src/ generated_cpp_50/
 LIBRARIES ${PROJECT_NAME}
 )
 
+# Set cache variables
+set(PythonQt_Wrap_Qtcore 1 CACHE BOOL 1)
+set(PythonQt_Wrap_Qtgui 1 CACHE BOOL 1)
+set(PythonQt_Wrap_Qtuitools 1 CACHE BOOL 1)
+
 #----------------------------------------------------------------------------
 # Qt version
 
