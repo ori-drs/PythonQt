@@ -1,0 +1,7 @@
+set(python_qt_INCLUDE_DIRS_new "")
+#set(python_qt_INCLUDE_DIRS "${python_qt_INCLUDE_DIRS}/PythonQt")
+foreach(path ${python_qt_INCLUDE_DIRS})
+  list(APPEND python_qt_INCLUDE_DIRS_new ${path})
+  list(APPEND python_qt_INCLUDE_DIRS_new "${path}/PythonQt")
+endforeach()
+set(python_qt_INCLUDE_DIRS ${python_qt_INCLUDE_DIRS_new})

@@ -14,6 +14,7 @@ find_package(catkin)
 catkin_package(
 INCLUDE_DIRS src/ generated_cpp_50/
 LIBRARIES ${PROJECT_NAME}
+CFG_EXTRAS python_qt.cmake
 )
 
 # Set cache variables
