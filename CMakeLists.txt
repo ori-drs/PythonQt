@@ -351,7 +351,7 @@ if(BUILD_TESTING)
     tests/PythonQtTestMain.cpp
     )
 
-  set_property(SOURCE tests/PythonQtTestMain.cpp PROPERTY COMPILE_DEFINITIONS "main=tests_PythonQtTestMain")
+  set_property(SOURCE tests/PythonQtTestMain.cpp PROPERTY COMPILE_DEFINITIONS "main=tests_PythonQtTestMain" POSITION_INDEPENDENT_CODE ON)
 
   list(APPEND test_sources
     tests/PythonQtTests.cpp
@@ -373,11 +373,11 @@ if(BUILD_TESTING)
       tests/PythonQtTestCleanup.h
       )
 
-    set_property(SOURCE tests/PythonQtTestMain.cpp APPEND PROPERTY COMPILE_DEFINITIONS "PythonQt_Wrap_Qtcore")
+    set_property(SOURCE tests/PythonQtTestMain.cpp APPEND PROPERTY COMPILE_DEFINITIONS "PythonQt_Wrap_Qtcore" POSITION_INDEPENDENT_CODE ON)
   endif()
 
   add_executable(PythonQtCppTests ${test_sources})
-  target_link_libraries(PythonQtCppTests PythonQt)
+  target_link_libraries(PythonQtCppTests ${PROJECT_NAME})
 
   add_test(
     NAME tests_PythonQtTestMain

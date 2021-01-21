@@ -1948,7 +1948,7 @@ bool PythonQtPrivate::isMethodDescriptor(PyObject* object) const
 }
 
 // We need this for the dynamic meta object building:
-#include <private/qmetaobjectbuilder_p.h>
+#include <QtCore/private/qmetaobjectbuilder_p.h>
 
 const QMetaObject* PythonQtPrivate::getDynamicMetaObject(PythonQtInstanceWrapper* wrapper, const QMetaObject* prototypeMetaObject)
 {
