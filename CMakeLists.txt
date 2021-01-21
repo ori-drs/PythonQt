@@ -9,6 +9,8 @@ cmake_minimum_required(VERSION 3.5)
 
 project(python_qt)
 
+add_compile_options(-Wno-format-security)
+
 find_package(catkin)
 
 catkin_package(
