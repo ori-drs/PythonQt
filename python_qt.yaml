@@ -1,0 +1,2 @@
+python_qt:
+  ubuntu: [ros-noetic-python-qt]
